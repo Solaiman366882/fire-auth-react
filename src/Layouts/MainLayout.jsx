@@ -8,7 +8,7 @@ const MainLayout = () => {
     return (
         <div className=" font-poppins">
             <Header></Header>
-            <div className="w-full">
+            <div className="w-full ">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
