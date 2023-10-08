@@ -8,6 +8,11 @@ export default {
     extend: {
       fontFamily:{
         poppins:"'Poppins', sans-serif"
+      },
+      color:{
+        "pera-color":"#738ea5",
+        "title-heading":"#002642",
+        "bg-color":"#EDF3F8"
       }
     },
   },
