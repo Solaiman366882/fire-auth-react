@@ -1,0 +1,78 @@
+.c-btn {
+    padding: 10px 35px;
+    font-size: 18px;
+    border-radius: 100px;
+    display: inline-block;
+    overflow: hidden;
+    color: rgb(24, 25, 34);
+    background: linear-gradient(131.15deg, rgb(94, 255, 216) -13.07%, rgb(96, 226, 255) 94.86%), linear-gradient(rgba(253, 252, 255, 0) 0%, rgba(253, 252, 255, 0.5) 100%);
+    box-shadow: rgba(98, 229, 250, 0.01) 0px 115px 32px, rgba(98, 229, 250, 0.04) 0px 74px 29px, rgba(98, 229, 250, 0.14) 0px 41px 25px, rgba(98, 229, 250, 0.24) 0px 18px 18px, rgba(98, 229, 250, 0.28) 0px 5px 10px, rgba(98, 229, 250, 0.29) 0px 0px 0px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+.btn-bg{
+    background: linear-gradient(131.15deg, rgb(94, 255, 216) -13.07%, rgb(96, 226, 255) 94.86%), linear-gradient(rgba(253, 252, 255, 0) 0%, rgba(253, 252, 255, 0.5) 100%);
+    box-shadow: rgba(98, 229, 250, 0.01) 0px 115px 32px, rgba(98, 229, 250, 0.04) 0px 74px 29px, rgba(98, 229, 250, 0.14) 0px 41px 25px, rgba(98, 229, 250, 0.24) 0px 18px 18px, rgba(98, 229, 250, 0.28) 0px 5px 10px, rgba(98, 229, 250, 0.29) 0px 0px 0px;
+    letter-spacing: -0.02em;
+}
+.c-btn::before {
+	width: 0px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	background: rgb(57, 255, 255);
+	content: "";
+	display: block;
+	transition: all 0.4s ease-in-out 0s;
+	z-index: -1;
+}
+.c-btn:hover::before {
+	width: 100%;
+	
+}
+
+/* banner section */
+.banner-section {
+    text-align: center;
+    min-width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/header-bg1.jpg");
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner-section h1{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+}
+.banner-section h2{ 
+    color: #eee;
+    margin: 20px 0 40px 0;
+    font-size: 24px;
+
+}
+.banner-section h2 span{
+    color: #eeeeeec2;
+    font-size: 18px;
+
+}
+.hero-banner{
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-start {
+        width: 75%;
+        justify-content: space-between;
+    }
+}

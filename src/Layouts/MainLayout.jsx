@@ -1,11 +1,17 @@
 import { Outlet } from "react-router-dom";
+import Header from "../components/Header/Header";
+import '../assets/css/custom.css';
+import Footer from "../components/Footer/Footer";
 
 
 const MainLayout = () => {
     return (
         <div className=" font-poppins">
-            <h1 className="text-center font-bold text-rose-700 text-5xl">this is main layouts.</h1>
-            <Outlet></Outlet>
+            <Header></Header>
+            <div className="w-full">
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

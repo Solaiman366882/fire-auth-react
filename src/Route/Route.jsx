@@ -5,6 +5,9 @@ import Home from '../Pages/Home/Home';
 import About from '../Pages/About/About';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import Service from '../Pages/Service/Service';
+import Portfolio from '../Pages/Portfolio/Portfolio'
+import Team from '../Pages/Team/Team'
 
 const Route = createBrowserRouter([
     {
@@ -20,8 +23,16 @@ const Route = createBrowserRouter([
                 element:<About></About>
             },
             {
-                path:"/Services",
-                element:<h2>service</h2>
+                path:"/services",
+                element:<Service></Service>
+            },
+            {
+                path:"/portfolio",
+                element:<Portfolio></Portfolio>
+            },
+            {
+                path:"/team",
+                element:<Team></Team>
             },
             {
                 path:"/login",
