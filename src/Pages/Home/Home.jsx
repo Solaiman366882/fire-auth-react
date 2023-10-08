@@ -7,13 +7,11 @@ const Home = () => {
 
     const services = useLoaderData()
 
-    console.log(services);
-
     return (
         <div>
             <Banner></Banner>
             <div>
-                <ServiceSection></ServiceSection>
+                <ServiceSection services={services}></ServiceSection>
             </div>
             <div>
                 <PortfolioSection></PortfolioSection>

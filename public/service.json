@@ -4,40 +4,40 @@
       "title": "Silver Package",
       "short_description": "Basic wedding planning package",
       "description": "Our Silver Package includes essential wedding planning services such as venue selection, vendor coordination, and day-of coordination. This package is perfect for couples who have already made some arrangements and need assistance with final details.",
-      "price": "$2,500",
-      "img": "https://example.com/silver-package.jpg"
+      "price": 2500,
+      "img": "https://i.ibb.co/0jqfg5Z/Ringwood-AM013-scaled.jpg"
     },
     {
       "id": 2,
       "title": "Gold Package",
       "short_description": "Comprehensive wedding planning package",
       "description": "The Gold Package is a comprehensive wedding planning service that covers everything from start to finish. We'll assist you with venue selection, vendor management, budget planning, design, and coordination on the big day.",
-      "price": "$5,000",
-      "img": "https://example.com/gold-package.jpg"
+      "price": 5000,
+      "img": "https://i.ibb.co/y428n6Z/goldpackage.jpg"
     },
     {
       "id": 3,
       "title": "Destination Wedding",
       "short_description": "Plan your dream destination wedding",
       "description": "Dreaming of a romantic destination wedding? Our Destination Wedding package is designed for couples who want a unique and memorable wedding in a stunning location. We'll handle all the logistics and planning, so you can enjoy your special day.",
-      "price": "$7,500",
-      "img": "https://example.com/destination-wedding.jpg"
+      "price": 7500,
+      "img": "https://i.ibb.co/kJX6fC1/featured-27.webp"
     },
     {
       "id": 4,
       "title": "Intimate Elopement",
       "short_description": "Plan an intimate elopement ceremony",
       "description": "For couples seeking a more intimate celebration, our Elopement package provides personalized planning for a small guest list. We'll help you find the perfect location, officiant, and handle all the details for a beautiful and meaningful elopement ceremony.",
-      "price": "$1,200",
-      "img": "https://example.com/elopement-package.jpg"
+      "price": 1200,
+      "img": "https://i.ibb.co/KFQrMpx/001-elopement-packages-in-venice.jpg"
     },
     {
       "id": 5,
       "title": "Themed Wedding",
       "short_description": "Create a unique themed wedding",
       "description": "Do you have a specific theme in mind for your wedding? Our Themed Wedding package is perfect for couples who want to create a one-of-a-kind celebration. We'll work with you to bring your vision to life, from decor to entertainment.",
-      "price": "$3,800",
-      "img": "https://example.com/themed-wedding.jpg"
+      "price": 3800,
+      "img": "https://i.ibb.co/Y3H0SLp/photo-1587271636175-90d58cdad458.jpg"
     },
     {
       "id": 6,
@@ -45,7 +45,7 @@
       "short_description": "Tailored to your unique needs",
       "description": "Can't find the perfect package? Our Customized Package allows you to mix and match services to create a tailored wedding planning experience. Let us know your specific needs, and we'll design a package just for you.",
       "price": "Varies",
-      "img": "https://example.com/customized-package.jpg"
+      "img": "https://i.ibb.co/Jzyjq4h/intro-lazzaretto.jpg"
     }
   ]
   
