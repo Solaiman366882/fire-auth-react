@@ -8,6 +8,7 @@ import Register from '../Pages/Register/Register';
 import Service from '../Pages/Service/Service';
 import Portfolio from '../Pages/Portfolio/Portfolio'
 import Team from '../Pages/Team/Team'
+import PrivateRoute from './PrivateRoute';
 
 const Route = createBrowserRouter([
     {
@@ -17,24 +18,24 @@ const Route = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>,
-                loader:() => fetch('service.json')
+                loader:() => fetch('/service.json')
             },
             {
                 path:"/about",
-                element:<About></About>
+                element:<PrivateRoute><About></About></PrivateRoute>
             },
             {
                 path:"/service/:id",
-                element:<Service></Service>,
-                loader:() => fetch("newService.json")        
+                element:<PrivateRoute><Service></Service></PrivateRoute>,
+                loader:() => fetch("/service.json")        
             },
             {
                 path:"/portfolio",
-                element:<Portfolio></Portfolio>,
+                element:<PrivateRoute><Portfolio></Portfolio></PrivateRoute>,
             },
             {
                 path:"/team",
-                element:<Team></Team>
+                element:<PrivateRoute><Team></Team></PrivateRoute>
             },
             {
                 path:"/login",

@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../../assets/css/loginRegister.css'
 import titleImg from "../../assets/images/section-title.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+
+    const {userLogin}  = useContext(AuthContext);
+
+    const location = useLocation();
+
+    console.log("login",location);
+
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password =  e.target.pass.value;
+
+        userLogin(email,password)
+        .then(result => {
+
+            //redirect after successfull login
+            navigate( location?.state ? location.state : '/')
+            console.log(result)
+        })
+        .catch(err => console.log(err))
 
         console.log(email,password);
     }

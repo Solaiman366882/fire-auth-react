@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import '../../assets/css/loginRegister.css'
 import titleImg from "../../assets/images/section-title.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -12,6 +17,21 @@ const Register = () => {
         const img  = e.target.img.value;
 
         console.log(name,email,password,img);
+        createUser(email,password)
+        .then( result => {
+            result.user.updateProfile({
+                displayName:name,
+            })
+        })
+        .catch( err => {
+            // Swal.fire(
+            //     'Sorry',
+            //     'This email already exist',
+            //     'error'
+            //   )
+            console.log(err);
+            }
+        )
     }
     return (
         <div className=" min-h-[90vh] flex justify-center items-center py-8 w-full">
