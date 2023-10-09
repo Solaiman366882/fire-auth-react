@@ -3,22 +3,45 @@ import '../../assets/css/loginRegister.css'
 import titleImg from "../../assets/images/section-title.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
 
-    const {userLogin}  = useContext(AuthContext);
+    const {userLogin,handleGoogleLogin}  = useContext(AuthContext);
 
     const location = useLocation();
 
-    console.log("login",location);
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
+    const handleSocialLogin = media => {
+
+        media()
+        .then( result => {
+            console.log(result);
+            Swal.fire(
+                'Good job!',
+                'Successfully login with google',
+                'success'
+              )
+            navigate( location?.state ? location.state : '/')
+        })
+        
+    }
 
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password =  e.target.pass.value;
+
+        const validatePassword = (password)  =>{
+            const pattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])(.{6,})$/;
+            return pattern.test(password);
+        }
+
+        if(!validatePassword(password)){
+           return alert("Password is Invalid");
+        }
 
         userLogin(email,password)
         .then(result => {
@@ -26,6 +49,11 @@ const Login = () => {
             //redirect after successfull login
             navigate( location?.state ? location.state : '/')
             console.log(result)
+            Swal.fire(
+                'Good job!',
+                'Login Successfully',
+                'success'
+              )
         })
         .catch(err => console.log(err))
 
@@ -34,7 +62,7 @@ const Login = () => {
     return (
         <div className=" min-h-[90vh] flex justify-center items-center py-8 w-full">
             <div>
-                <div className="form-area w-[800px] mx-auto">
+                <div className="form-area w-full p-5 lg:p-5 lg:w-[800px] mx-auto">
                     <div className="form-wrapper">
                         <div className="title text-center mb-5">
                         <p className="text-pera-color mb-5">To get full access,</p>
@@ -52,9 +80,16 @@ const Login = () => {
                             </div>
                             <div className="text-center">
                                 <button type="submit" className="c-btn w-full">Login</button>
-                                <p className="text-lg font-medium mt-5">Do not have an account, please <Link className="text-[#29395B] text-xl" to='/register'>Register</Link></p>
                             </div>
                         </form>
+                        <div>
+                            
+                            <button onClick={() => handleSocialLogin(handleGoogleLogin)} className="c-btn w-full mt-5">Login with google</button>
+
+                            <div>
+                                <p className="text-lg font-medium mt-5">Do not have an account, please <Link className="text-[#29395B] text-xl underline" to='/register'>Register</Link></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

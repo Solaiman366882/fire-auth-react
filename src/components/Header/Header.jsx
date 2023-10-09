@@ -54,7 +54,7 @@ const Header = () => {
                         </li>
         </>
     return (
-        <div className="w-full">
+        <div className="w-full relative z-[700]">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">

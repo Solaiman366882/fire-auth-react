@@ -9,11 +9,13 @@ import Service from '../Pages/Service/Service';
 import Portfolio from '../Pages/Portfolio/Portfolio'
 import Team from '../Pages/Team/Team'
 import PrivateRoute from './PrivateRoute';
+import Error from '../Pages/Error/Error';
 
 const Route = createBrowserRouter([
     {
         path:"/",
         element:<MainLayout></MainLayout>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:"/",

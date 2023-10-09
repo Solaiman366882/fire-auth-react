@@ -1,27 +1,63 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../../assets/css/loginRegister.css'
 import titleImg from "../../assets/images/section-title.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser,handleGoogleLogin} = useContext(AuthContext);
+    const location = useLocation();
+
+    const navigate = useNavigate();
+
+
+    const handleSocialLogin = media => {
+
+        media()
+        .then( result => {
+            console.log(result);
+            Swal.fire(
+                'Good job!',
+                'Successfully login with google',
+                'success'
+              )
+            navigate( location?.state ? location.state : '/')
+        })
+        
+    }
 
     const handleRegister = e => {
         e.preventDefault();
-        const name  = e.target.name.value;
+        // const name  = e.target.name.value;
         const password  = e.target.password.value;
         const email  = e.target.email.value;
-        const img  = e.target.img.value;
+        // const img  = e.target.img.value;
 
-        console.log(name,email,password,img);
+        // reg expression for password validation
+        const validatePassword = (password)  =>{
+            const pattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])(.{6,})$/;
+            return pattern.test(password);
+        }
+        //password validation condition
+        if(!validatePassword(password)){
+           return Swal.fire(
+            'Invalid Password',
+            'Your password must have at least 6 character and uppercase letter and special character',
+            'error'
+          )
+        }
+
         createUser(email,password)
-        .then( result => {
-            result.user.updateProfile({
-                displayName:name,
-            })
+        .then( () => {
+            Swal.fire(
+                    'Congrats',
+                    'User created successfully',
+                    'success'
+                  )
+            navigate( location?.state ? location.state : '/')
         })
         .catch( err => {
             // Swal.fire(
@@ -36,7 +72,7 @@ const Register = () => {
     return (
         <div className=" min-h-[90vh] flex justify-center items-center py-8 w-full">
         <div>
-            <div className="form-area w-[800px] mx-auto">
+            <div className="form-area w-full p-3 lg:p-5 lg:w-[800px] mx-auto">
                 <div className="form-wrapper">
                     <div className="title text-center mb-5">
                     <p className="text-pera-color mb-5">To get full access,</p>
@@ -55,14 +91,21 @@ const Register = () => {
                         <div className="single-input">
                             <input type="password" name="password" placeholder="password" />
                         </div>
-                        <div className="single-input">
+                        {/* <div className="single-input">
                             <input type="text" name="img" placeholder="Profile image link" />
-                        </div>
+                        </div> */}
                         <div className="text-center">
                             <button type="submit" className="c-btn w-full">Register</button>
-                            <p className="text-lg font-medium mt-5">Already have an account, please <Link className="text-[#29395B] text-xl" to='/login'>Login</Link></p>
                         </div>
                     </form>
+                    <div>
+                            
+                            <button onClick={() => handleSocialLogin(handleGoogleLogin)} className="c-btn w-full mt-5">Login with google</button>
+
+                            <div>
+                                <p className="text-lg font-medium mt-5">Do not have an account, please <Link className="text-[#29395B] text-xl underline" to='/register'>Register</Link></p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

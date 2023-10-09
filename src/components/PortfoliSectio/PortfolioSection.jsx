@@ -22,7 +22,7 @@ const PortfolioSection = () => {
                         <img className="mx-auto" src={titleImg} alt="" />
                     </div>
             </div>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     images?.map(image => <PortfolioCard key={image.id} image={image}></PortfolioCard>)
                 }

@@ -1,8 +1,29 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Donation Campaign
 
-Currently, two official plugins are available:
+##A project for Wedding planning
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+### Project details
+ This project is created for wedding planning website ,to get full access on this site you have to log in . and choose your wedding plan
+  
+
+
+
+
+## Important Link
+
+ - [Live Website link](https://react-wedding-planning.web.app/)
+ - [Repository link](https://github.com/programming-hero-web-course-4/b8a9-event-management-Solaiman366882)
+
+
+
+## Features
+
+- if any want see details , he has to login
+- login and registration are validate
+- Any one can login using google
+- Fullscreen mode
+- Cross platform
+

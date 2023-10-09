@@ -240,9 +240,20 @@
     color: #002642;
 }
 
+.not-found {
+    background: url(../../assets/images/404.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
 @media only screen and (max-width: 768px) {
     .navbar-start {
         width: 75%;
         justify-content: space-between;
+    }
+    .banner-section h1 {
+        font-size: 30px;
     }
 }
