@@ -1,8 +1,9 @@
+import TeamSection from "../../components/TeamSection/TeamSection";
 
 const About = () => {
     return (
         <div>
-            this is about
+            <TeamSection></TeamSection>
         </div>
     );
 };

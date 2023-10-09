@@ -4,6 +4,14 @@ import titleImg from "../../assets/images/section-title.png";
 
 
 const Login = () => {
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password =  e.target.pass.value;
+
+        console.log(email,password);
+    }
     return (
         <div className=" min-h-[90vh] flex justify-center items-center py-8 w-full">
             <div>
@@ -16,12 +24,12 @@ const Login = () => {
                             <img className="mx-auto" src={titleImg} alt="" />
                         </div>
                     </div>
-                        <form action="">
+                        <form onSubmit={handleLogin} action="">
                             <div className="single-input">
-                                <input type="email" name="email" placeholder="Name" />
+                                <input type="email" name="email" placeholder="Name" required/>
                             </div>
                             <div className="single-input">
-                                <input type="password" name="password" placeholder="Name" />
+                                <input type="password" name="pass" placeholder="Password" required/>
                             </div>
                             <div className="text-center">
                                 <button type="submit" className="c-btn w-full">Login</button>

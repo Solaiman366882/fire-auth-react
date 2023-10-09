@@ -24,12 +24,13 @@ const Route = createBrowserRouter([
                 element:<About></About>
             },
             {
-                path:"/services",
-                element:<Service></Service>
+                path:"/service/:id",
+                element:<Service></Service>,
+                loader:() => fetch("newService.json")        
             },
             {
                 path:"/portfolio",
-                element:<Portfolio></Portfolio>
+                element:<Portfolio></Portfolio>,
             },
             {
                 path:"/team",
