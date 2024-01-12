@@ -1,5 +1,5 @@
 
-# Donation Campaign
+# LoveMe Wedding Management
 
 ##A project for Wedding planning
 
